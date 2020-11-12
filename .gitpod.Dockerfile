@@ -11,7 +11,7 @@ USER gitpod
 #
 # More information: https://www.gitpod.io/docs/config-docker/
 
-RUN bash -c ". /home/gitpod/.sdkman/bin/sdkman-init.sh"
-RUN bash -c "sdk upgrade"
-RUN bash -c "sdk install java 8.0.265-open"
-RUN bash -c "sdk uninstall java 11.0.8.fx-zulu"
+RUN . /home/gitpod/.sdkman/bin/sdkman-init.sh \
+    && sdk upgrade \
+    && sdk install java 8.0.265-open \
+    && sdk uninstall java 11.0.8.fx-zulu
